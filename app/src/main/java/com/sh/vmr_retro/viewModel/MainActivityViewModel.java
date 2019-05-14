@@ -39,7 +39,7 @@ public class MainActivityViewModel extends AndroidViewModel {
                 {
                     live_car.postValue(response.body().getContent());
                 }
-                Log.e("Failed",response.message());
+                Log.i("Success",response.message());
             }
 
             @Override

@@ -13,11 +13,8 @@ import com.sh.vmr_retro.R;
 import com.sh.vmr_retro.model.entity.Car;
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
 
 public class CarListAdapter extends ListAdapter<Car,CarListAdapter.ViewHolder> {
-
-    List<Car> carList;
 
     public CarListAdapter() {
         super(new CarItemCallBack());
@@ -33,8 +30,8 @@ public class CarListAdapter extends ListAdapter<Car,CarListAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        Car carObj = carList.get(position);
-        viewHolder.mTitle.setText(carObj.getContent().get(position).getDescription());
+        Car carObj = getItem(position);
+        viewHolder.mTitle.setText(carObj.getmTitle());
         if(carObj.getmImage()!= null)
         {
             Picasso.get().load(carObj.getmImage()).into(viewHolder.mImage);
